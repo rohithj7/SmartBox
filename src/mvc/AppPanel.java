@@ -125,7 +125,6 @@ public abstract class AppPanel extends JPanel implements ActionListener, Propert
                     String[] cmmds = appFactory.getHelp();
                     Utilities.inform(cmmds);
                     break;
-
                 }
 
                 default: {

@@ -41,10 +41,10 @@ public class ContainerFactory implements AppFactory {
 
     @Override
     public String[] getHelp() {
-        String[] cmmds = new String[1];
-        cmmds[0] = "Select \"Roll\" to roll the dice";
-        cmmds[1] = "Seven wins";
-        cmmds[2] = "Three loses";
+        String[] cmmds = new String[3];
+        cmmds[0] = "Select \"Add\" to add components";
+        cmmds[1] = "Select \"Rem\" to remove components";
+        cmmds[2] = "Select \"Run\" to run components";
         return cmmds;
     }
 

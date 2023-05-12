@@ -12,9 +12,13 @@ public class Rem extends Command {
 
     @Override
     public void execute() {
-        Container container = (Container)model;
-        String cmnd = Utilities.ask("Component name?");
-        container.remComponent(cmnd);
+        try {
+            Container container = (Container) model;
+            String cmnd = Utilities.ask("Component name?");
+            container.remComponent(cmnd);
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
     }
 
 }

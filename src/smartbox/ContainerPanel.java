@@ -2,11 +2,8 @@ package smartbox;
 
 import mvc.AppFactory;
 import mvc.AppPanel;
-import mvc.Utilities;
-
 import javax.swing.*;
 import java.awt.*;
-import java.beans.PropertyChangeEvent;
 
 public class ContainerPanel extends AppPanel {
 
@@ -31,8 +28,6 @@ public class ContainerPanel extends AppPanel {
         run = new JButton("Run");
         run.addActionListener(this);
         controlPanel.add(run);
-
-        //ContainerView view = new ContainerView(model);
 
     }
 

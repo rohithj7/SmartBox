@@ -4,7 +4,6 @@ import java.util.*;
 import java.io.Serializable;
 import java.lang.reflect.*;
 
-
 public class Component implements Serializable {
 
     private Set<Class<?>> requiredInterfaces;
