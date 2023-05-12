@@ -71,10 +71,14 @@ public class Container extends Model {
     public void launch(String name) {
         try {
             // look up component and call main if it's an App
-            App app = (App) components.get(name);
-            app.main();
+            if(components.get(name) instanceof App) {
+                App app = (App) components.get(name);
+                app.main();
+            } else {
+                mvc.Utilities.error("Input is not an instance of App");
+            }
         } catch (Exception e) {
-            mvc.Utilities.error("Error running element: " + e.getMessage());
+            mvc.Utilities.error(e.getMessage());
             e.printStackTrace();
         }
     }
