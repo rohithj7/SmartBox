@@ -13,12 +13,12 @@ public class Add extends Command {
     @Override
     public void execute() {
         try {
-            System.out.println("Entered add");
             Container container = (Container) model;
             String cmnd = Utilities.ask("Component name?");
             container.addComponent(cmnd);
         } catch (Exception e) {
-            //System.err.println("Error adding element: " + e.getMessage());
+            mvc.Utilities.error("Error adding element: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 

@@ -17,7 +17,8 @@ public class Rem extends Command {
             String cmnd = Utilities.ask("Component name?");
             container.remComponent(cmnd);
         } catch (Exception e) {
-            System.err.println(e.getMessage());
+            mvc.Utilities.error("Error removing element: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 

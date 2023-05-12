@@ -13,16 +13,12 @@ public class Container extends Model {
         return components.values();
     }
 
-    public void addComponent(String name) {
+    public void addComponent(String name) throws Exception {
         String qualName = "smartbox.components." + name;
         Object obj;
-        try {
-            Class<?> clazz = Class.forName(qualName);
-            obj = clazz.newInstance();
-            addComponent((Component) obj);
-        } catch (Exception e) {
-            System.err.println(e.getMessage());
-        }
+        Class<?> clazz = Class.forName(qualName);
+        obj = clazz.newInstance();
+        addComponent((Component) obj);
     }
 
 
@@ -78,7 +74,7 @@ public class Container extends Model {
             App app = (App) components.get(name);
             app.main();
         } catch (Exception e) {
-            mvc.Utilities.error(e.getMessage());
+            mvc.Utilities.error("Error running element: " + e.getMessage());
             e.printStackTrace();
         }
     }
